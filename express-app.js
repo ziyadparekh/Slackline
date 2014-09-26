@@ -8,6 +8,9 @@ var passport = require('passport');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var errorHandler = require('errorHandler');
+var morgan = require('morgan');
+var session = require('express-session');
 var app = express();
 var index = require('./routes/index');
 
@@ -26,14 +29,19 @@ process.on('uncaughtException', function(err){
 });
 
 if(process.env.PORT){
-    app.use(express.logger('dev'));
+    app.use(morgan('combined'));
 }else{
-    app.use(express.logger('dev'));
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-    app.use(express.session({
+    app.use(morgan('combined'));
+    app.use(errorHandler({ dumpExceptions: true, showStack: true }));
+    app.use(session({
         secret: 'tobo!',
         maxAge: 36000009,
-        cookie: { maxAge: 60 * 60 * 10008 }
+        saveUninitialized: true,
+        resave: true,
+        cookie: {
+            maxAge: 60 * 60 * 10008,
+            secure: true
+        }
     }));
 }
 
