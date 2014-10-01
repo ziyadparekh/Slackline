@@ -1,19 +1,21 @@
 var version = process.env.API_VERSION;
 
 //module dependencies
-var toobusy = require('toobusy');
-var express = require('express');
-var path = require('path');
-var passport = require('passport');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
-var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var errorHandler = require('errorHandler');
-var morgan = require('morgan');
 var session = require('express-session');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var toobusy = require('toobusy');
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
 var app = express();
-var index = require('./routes/index');
 
+//Routes & API
+var categories = require("./routes/api/categories");
+var index = require('./routes/index');
 //dont crash on overload
 app.use(function(req, res, next) {
     if (toobusy()) {
@@ -77,6 +79,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //routes
+//categories
+app.post("/"+version+"/categories", categories.create);
+app.get("/"+version+"/categories", categories.list);
 app.get('*', index.index);
 
 module.exports = app;

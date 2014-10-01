@@ -1,0 +1,78 @@
+{
+   "users":[
+      {
+         "id":3661,
+         "username":"astericky",
+         "uploaded_avatar_id":13986,
+         "avatar_template":"/user_avatar/discuss.atom.io/astericky/{size}/13986.png"
+      },
+      {
+         "id":2574,
+         "username":"kenokabe",
+         "uploaded_avatar_id":14031,
+         "avatar_template":"/user_avatar/discuss.atom.io/kenokabe/{size}/14031.png"
+      },
+      {
+         "id":3664,
+         "username":"adamnbowen",
+         "uploaded_avatar_id":14032,
+         "avatar_template":"/user_avatar/discuss.atom.io/adamnbowen/{size}/14032.png"
+      }
+   ],
+   "topic_list":{
+      "can_create_topic":true,
+      "draft":null,
+      "draft_key":"new_topic",
+      "draft_sequence":0,
+      "topics":[
+         {
+            "id":4429,
+            "title":"Popular Javascript Frameworks and Libraries Support",
+            "fancy_title":"Popular Javascript Frameworks and Libraries Support",
+            "slug":"popular-javascript-frameworks-and-libraries-support",
+            "posts_count":5,
+            "reply_count":2,
+            "highest_post_number":5,
+            "image_url":null,
+            "created_at":"2014-03-12T17:11:40.308-04:00",
+            "last_posted_at":"2014-03-12T18:18:16.599-04:00",
+            "bumped":true,
+            "bumped_at":"2014-03-12T18:18:16.599-04:00",
+            "unseen":false,
+            "last_read_post_number":5,
+            "unread":0,
+            "new_posts":0,
+            "pinned":false,
+            "unpinned":null,
+            "visible":true,
+            "closed":false,
+            "archived":false,
+            "notification_level":1,
+            "views":157,
+            "like_count":0,
+            "starred":false,
+            "has_summary":false,
+            "archetype":"regular",
+            "last_poster_username":"adamnbowen",
+            "category_id":8,
+            "posters":[
+               {
+                  "extras":null,
+                  "description":"Original Poster",
+                  "user_id":3661
+               },
+               {
+                  "extras":null,
+                  "description":"Frequent Poster",
+                  "user_id":2574
+               },
+               {
+                  "extras":"latest",
+                  "description":"Most Recent Poster",
+                  "user_id":3664
+               }
+            ]
+         }
+      ]
+   }
+}

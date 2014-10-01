@@ -11,6 +11,8 @@ categories = function () {
                  'text_color varchar(6),' +
                  'slug varchar(256),' +
                  'topic_count int(11),' +
+                 'post_count int(11),' +
+                 'notification_level int(1),' +
                  'description varchar(256));';
 };
 
