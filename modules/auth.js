@@ -36,7 +36,9 @@ function(req, accessToken, refreshToken, profile, done) {
                     image: 'http://graph.facebook.com/'+profile.id+'/picture?width=640&height=640',
                     facebook_id: profile.id,
                     verified: profile.verified ? 1 : 0,
-                    bio: ""
+                    bio: "",
+                    date_created: new Date(),
+                    last_seen: new Date()
                 };
                 db.users.create(send, req, function(err, user){
                     if(err)

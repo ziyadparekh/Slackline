@@ -88,6 +88,6 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 app.get('/logout', index.logout);
 //status
 app.get('/status', ensureLoggedIn('/login'), index.status);
-app.get('/*', ensureLoggedIn('/login'), index.index);
+app.get('/', ensureLoggedIn('/login'), index.index);
 
 module.exports = app;
