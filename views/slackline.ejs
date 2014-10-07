@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>blazeNew.fm</title>
+    <script type="text/javascript">
+        var url = "<%= url %>";
+        var me = <%- user %>;
+        var endpoint = url+"/1/";
+        console.log(me);
+    </script>
 </head>
 <body>
     <div id='leftnav' class='col-xs-5 way-behind leftnav leftnav-fixed hidden'></div>
     <header id='header'></header>
     <div id='container-body' class='container contentzone'>
         <div class='row'>
-            <div id='center-container' class='surface col-xs-24'>
+            <div id='center-container' class='col-xs-24'>
                 HELLO JELLO
             </div>
         </div>
