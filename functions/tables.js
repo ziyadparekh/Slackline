@@ -1,19 +1,19 @@
 "use strict";
 
 var connection = require("../modules/connection");
-var categories;
+var users;
 
-categories = function () {
-    return 'CREATE TABLE categories' +
-                 '(id int(11),' +
+users = function () {
+    return 'CREATE TABLE users' +
+                 '(id int(11) PRIMARY KEY AUTO_INCREMENT,' +
                  'name varchar(256),' +
-                 'color varchar(6),' +
-                 'text_color varchar(6),' +
-                 'slug varchar(256),' +
-                 'topic_count int(11),' +
-                 'post_count int(11),' +
-                 'notification_level int(1),' +
-                 'description varchar(256));';
+                 'facebook_id bigint(20),' +
+                 'email varchar(256),' +
+                 'image varchar(256),' +
+                 'verified tinyint(1),' +
+                 'bio longtext,' +
+                 'date_created date,' +
+                 'last_seen date);';
 };
 
-connection.query(categories());
+connection.query(users());
